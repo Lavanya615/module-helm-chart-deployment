@@ -1,6 +1,6 @@
 variable "cluster-password" {
   description = "cluster-password to connect to"
-  default     = "___INSERT_YOUR_OWN____"
+  default     = "admin"
 }
 
 variable "cluster-client-cert" {
@@ -25,20 +25,20 @@ variable "cluster-host" {
 
 variable "cluster-username" {
   description = "cluster-username to connect to"
-  default     = "___INSERT_YOUR_OWN____"
+  default     = "admin"
 }
 
 variable "name" {
   description = "name of the chart"
-  default     = "___INSERT_YOUR_OWN____"
+  default     = "http-chart"
 }
 
 variable "namespace" {
   description = "namespace to connect to"
-  default     = "___INSERT_YOUR_OWN____"
+  default     = "default"
 }
 
 variable "replicas" {
   description = "replicas"
-  default     = "___INSERT_YOUR_OWN____"
+  default     = "1"
 }
