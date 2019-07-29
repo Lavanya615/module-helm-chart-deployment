@@ -5,12 +5,12 @@ variable "cluster-password" {
 
 variable "cluster-client-cert" {
   description = "cluster-client-cert to connect to"
-  default     = "${/opt/ibm/cluster/cfc-certs/kubelet-client.crt}"
+  default     = "/opt/ibm/cluster/cfc-certs/kubelet-client.crt"
 }
 
 variable "cluster-client-key" {
   description = "cluster-client-key to connect to"
-  default     = "${/opt/ibm/cluster/cfc-certs/kubelet-client.key}"
+  default     = "/opt/ibm/cluster/cfc-certs/kubelet-client.key"
 }
 
 variable "cluster-ca-certificate" {
@@ -42,3 +42,4 @@ variable "replicas" {
   description = "replicas"
   default     = "1"
 }
+

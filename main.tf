@@ -1,13 +1,11 @@
 provider "kubernetes" {
+  host     = var.cluster-host
+  username = var.cluster-username
+  password = var.cluster-password
 
-
-  host     = "${var.cluster-host}"
-  username = "${var.cluster-username}"
-  password = "${var.cluster-password}"
-
-  client_certificate     = "${base64decode(var.cluster-client-cert)}"
-  client_key             = "${base64decode(var.cluster-client-key)}"
-  cluster_ca_certificate = "${base64decode(var.cluster-ca-certificate)}"
+  client_certificate     = base64decode(var.cluster-client-cert)
+  client_key             = base64decode(var.cluster-client-key)
+  cluster_ca_certificate = base64decode(var.cluster-ca-certificate)
 }
 
 resource "kubernetes_service_account" "tiller" {
@@ -43,13 +41,13 @@ provider "helm" {
   service_account = "tiller"
   namespace       = "kube-system"
   kubernetes {
-      host     = "${var.cluster-host}"
-      username = "${var.cluster-username}"
-      password = "${var.cluster-password}"
+    host     = var.cluster-host
+    username = var.cluster-username
+    password = var.cluster-password
 
-      client_certificate     = "${base64decode(var.cluster-client-cert)}"
-      client_key             = "${base64decode(var.cluster-client-key)}"
-      cluster_ca_certificate = "${base64decode(var.cluster-ca-certificate)}"
+    client_certificate     = base64decode(var.cluster-client-cert)
+    client_key             = base64decode(var.cluster-client-key)
+    cluster_ca_certificate = base64decode(var.cluster-ca-certificate)
   }
 }
 
