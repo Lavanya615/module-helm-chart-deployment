@@ -5,22 +5,22 @@ variable "cluster-password" {
 
 variable "cluster-client-cert" {
   description = "cluster-client-cert to connect to"
-  default     = "/opt/ibm/cluster/cfc-certs/kubelet-client.crt"
+  default     = "/opt/ibm/cluster/cfc-certs/helm/admin.crt"
 }
 
 variable "cluster-client-key" {
   description = "cluster-client-key to connect to"
-  default     = "/opt/ibm/cluster/cfc-certs/kubelet-client.key"
+  default     = "/opt/ibm/cluster/cfc-certs/helm/admin.key"
 }
 
 variable "cluster-ca-certificate" {
   description = "cluster-ca-certificate to connect to"
-  default     = "___INSERT_YOUR_OWN____"
+  default     = "/opt/ibm/cluster/cfc-keys/ca.crt"
 }
 
 variable "cluster-host" {
   description = "cluster-host to connect to"
-  default     = "___INSERT_YOUR_OWN____"
+  default     = "https://9.109.190.146:8443/"
 }
 
 variable "cluster-username" {
